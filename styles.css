@@ -1,0 +1,151 @@
+:root {
+  --bg: #0f0f1f;
+  --card: #1a1a2e;
+  --accent: #0ff;
+  --correct: #10b981;
+  --wrong: #ef4444;
+  --text: #e6eef6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--accent);
+  text-shadow: 0 0 6px var(--accent);
+}
+
+#progressContainer {
+  width: 450px;
+  height: 8px;
+  background: #111;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0,255,255,0.5);
+}
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.quiz-card {
+  background: var(--card);
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.2);
+  width: 450px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: var(--accent);
+}
+
+.options button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--card);
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.options button:hover {
+  background: rgba(0,255,255,0.1);
+  box-shadow: 0 0 12px var(--accent);
+  transform: scale(1.03);
+}
+
+.options button.correct {
+  background: var(--correct);
+  color: #000;
+}
+
+.options button.wrong {
+  background: var(--wrong);
+  color: #000;
+}
+
+.score {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.5;
+}
+
+button {
+  margin-top: 12px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--card);
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: rgba(0,255,255,0.1);
+  box-shadow: 0 0 12px var(--accent);
+  transform: scale(1.05);
+}
+
+.pixel-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  overflow: hidden;
+  background: #111;
+}
+
+.pixel-bar div {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  margin-right: 2px;
+  animation: movePixel 2s linear infinite;
+}
+
+.pixel-bar div:nth-child(even) { animation-delay: 0.2s; }
+.pixel-bar div:nth-child(odd) { animation-delay: 0.4s; }
+
+@keyframes movePixel {
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.2; }
+}

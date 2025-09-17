@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Movie Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Movie Quiz</h1>
+
+<div id="progressContainer">
+  <div id="progressBar"></div>
+</div>
+
+<div class="quiz-card" id="quizCard">
+  <div id="timer">Time Left: 15s</div>
+  <div class="question" id="question"></div>
+  <div class="options" id="options"></div>
+</div>
+
+<div class="quiz-card" id="resultCard" style="display:none;">
+  <div class="score" id="score"></div>
+  <button id="restartBtn">Restart Quiz</button>
+  <button id="shareFacebookBtn">Share on Facebook</button>
+  <button id="downloadBtn">Share as Picture</button>
+  <button id="contactBtn">Contact Me</button>
+</div>
+
+<div class="pixel-bar" id="pixelBar">
+  <div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
